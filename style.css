@@ -54,6 +54,20 @@ h1 {
   background: #45a049;
 }
 
+
+#delebtn{
+  padding: 10px 15px;
+  border: none;
+  background: #d63934;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#delebtn:hover {
+  background: #920500;
+}
+
 #taskList {
   list-style: none;
 }
