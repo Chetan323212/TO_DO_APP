@@ -1,12 +1,11 @@
 let addbtn = document.querySelector("#addBtn");
 let takslist = document.querySelector("#taskList");
 let taskInput = document.querySelector("#taskInput");
-let input = taskInput.value;
-
-function addButton() {
-  addbtn.addEventListener("click", function () {
+let addTask 
+function todoApp(){
+  addbtn.addEventListener("click", function (e) {
     let task = document.createElement("li");
-
+    console.log(e);
     if (taskInput.value == "") {
       alert("Enter your task");
     }else{
@@ -17,16 +16,24 @@ function addButton() {
     task.textContent = taskInput.value;
     takslist.appendChild(task);
     task.appendChild(Deletebtn);
+    taskInput.value = ""; // clear the input fild 
+    taskInput.focus();
     
-
     // delete button event
     Deletebtn.addEventListener("click", function () {
       task.remove()
     });
    } 
   });
+  
 }
 
-function deleteButton() {}
+todoApp()
+        
 
-addButton();
+taskInput.addEventListener("keyup", function(event){
+        if(event.key === "Enter"){
+            console.log("Enter key preass");
+            todoApp()
+        }
+})
